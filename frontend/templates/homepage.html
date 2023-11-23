@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homepage</title>
+</head>
+<body>
+    <h1>Club Data</h1>
+    
+    {% for club in data %}
+        <div>
+            <h2>{{ club.name }}</h2>
+            <ul>
+                <li>Founded: {{ club.founded }}</li>
+                <li>Coach: {{ club.coach }}</li>
+                <li>Players:</li>
+                <ul>
+                    {% for player in club.players %}
+                        <li>{{ player.field_name }} - {{ player.position }}</li>
+                    {% endfor %}
+                </ul>
+            </ul>
+        </div>
+    {% endfor %}
+</body>
+</html>
